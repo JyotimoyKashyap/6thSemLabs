@@ -10,7 +10,6 @@ void displayMe(void)
         glVertex2f(0.5, 0.5);
         glVertex2f(0.0, 0.5);
     glEnd();
-
     glFlush();
 }
 

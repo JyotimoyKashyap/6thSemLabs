@@ -26,5 +26,6 @@ int main(int argc, char** argv)
     glutDisplayFunc(displayMe);
     glLoadIdentity();
     glutMainLoop();
+    
     return 0;
 }

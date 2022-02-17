@@ -1,4 +1,4 @@
-# Guide to OpenGL
+# Guide to Compilation
 
 ## Compilation of C Code 
 Use the code below to compile the .c file with the Glut libraries 

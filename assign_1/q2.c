@@ -1,5 +1,6 @@
 #include <GL/glut.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 // global variables
 float xi, yi, xf, yf;
@@ -8,8 +9,8 @@ void dda_algorithm(void){
     float x, y, dx, dy, steps;
 
     // calculation 
-    dx = (float)(xf - xi);
-    dy = (float)(yf - yi);
+    dx = (xf - xi);
+    dy = (yf - yi);
 
     // if m < 0 then we have to move dy times else dx times 
     if(abs(dx) >= abs(dy)) steps = abs(dx);
@@ -17,16 +18,17 @@ void dda_algorithm(void){
 
     dx = dx/steps; x = xi;
     dy = dy/steps; y = yi;
+    glBegin(GL_POINTS);
+        glVertex2i(x, y);
+    glEnd();
     int i = 1;
     while(i <= steps){
-        // put the pixel here 
-        glClear(GL_COLOR_BUFFER_BIT);
+        // put the pixel here
+        x += dx; y += dy; 
+        glPointSize(5);
         glBegin(GL_POINTS);
-            glColor3f(1, 0, 0);
             glVertex2i(x, y);
         glEnd();
-        x += dx;
-        y += dy;
         i++;
     }
 
@@ -34,9 +36,10 @@ void dda_algorithm(void){
 }
 
 void init(void){
-    glClearColor(1, 1, 1, 1);
+    glClearColor(0, 0, 0, 0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
+    gluOrtho2D(-100,100,-100,100);
 }
 
 int main(int argc, char **argv)
@@ -61,7 +64,7 @@ int main(int argc, char **argv)
 
     // intial setup of open gl 
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(640, 640);
     glutInitWindowPosition(100, 100);
     glutCreateWindow("OpenGL Lab");

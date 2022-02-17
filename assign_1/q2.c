@@ -25,7 +25,6 @@ void dda_algorithm(void){
     while(i <= steps){
         // put the pixel here
         x += dx; y += dy; 
-        glPointSize(5);
         glBegin(GL_POINTS);
             glVertex2i(x, y);
         glEnd();
@@ -67,7 +66,7 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(640, 640);
     glutInitWindowPosition(100, 100);
-    glutCreateWindow("OpenGL Lab");
+    glutCreateWindow("DDL Line Drawing Algo");
     init();
     glutDisplayFunc(dda_algorithm);
     glutMainLoop();

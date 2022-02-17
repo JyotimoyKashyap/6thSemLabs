@@ -10,3 +10,5 @@ Use the code below to compile the .c file with the Glut libraries
 To run the file, simple run in the terminal. 
 
 `./<filename>`
+
+_There can be other methods of compiling._ 

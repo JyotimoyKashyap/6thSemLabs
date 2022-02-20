@@ -1,4 +1,4 @@
-# Guide to Compilation
+# Guide to Compilation for Graphics Lab
 
 ## Compilation of C Code 
 Use the code below to compile the .c file with the Glut libraries 

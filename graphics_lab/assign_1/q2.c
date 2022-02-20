@@ -26,7 +26,7 @@ void dda_algorithm(void){
         // put the pixel here
         x += dx; y += dy; 
         glBegin(GL_POINTS);
-            glVertex2i(x, y);
+            glVertex2f(x, y);
         glEnd();
         i++;
     }
@@ -38,7 +38,7 @@ void init(void){
     glClearColor(0, 0, 0, 0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(-100,100,-100,100);
+    gluOrtho2D(0,500,0,500);
 }
 
 int main(int argc, char **argv)

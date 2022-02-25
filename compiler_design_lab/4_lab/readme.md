@@ -5,3 +5,5 @@ Matching C styled comments in lex is documented already. Here, normal ways to ma
 Please refer the guide to states in lex programming from [here](https://www.ibm.com/docs/en/aix/7.2?topic=information-lex-program-start-conditions)
 
 The solution to the problem can be found here on [this](https://stackoverflow.com/questions/1130597/start-states-in-lex-flex) thread in stackoverflow
+
+Refer this website for the lex program. [Click Here](https://theprogrammingworld.wordpress.com/2015/10/10/program-to-count-the-number-of-comment-line-in-a-given-c-program-also-eliminate-them-and-copy-that-program-into-a-separate-file/)

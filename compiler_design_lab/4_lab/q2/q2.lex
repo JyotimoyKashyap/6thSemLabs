@@ -14,7 +14,7 @@ int com = 0, ariOp = 0, logOp = 0, keyword = 0, identifier = 0;
 if|else|for|while|do|switch|int|char|float|double|long|const|return|main {keyword++;fprintf(yyout, "%s", yytext);}
 "+"|"‐"|"*"|"/"|"%" {ariOp++;fprintf(yyout, "%s", yytext);}
 "<"|">"|"|"|"^"|"&"|"!" {logOp++;fprintf(yyout, "%s", yytext);}
-^[a - z A - Z _][a - z A - Z 0 - 9 _] * {identifier++;fprintf(yyout, "%s", yytext);};
+[a-zA-Z_][a-zA-Z0-9_]* {identifier++;fprintf(yyout, "%s", yytext);}
 .|\n {fprintf(yyout, "%s", yytext);}
 %%
 

@@ -1,7 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
-int com = 0, ariOp = 0, logOp = 0, keyword = 0;
+int com = 0, ariOp = 0, logOp = 0, keyword = 0, identifier = 0;
 %}
 
 %s COMMENT
@@ -14,6 +14,7 @@ int com = 0, ariOp = 0, logOp = 0, keyword = 0;
 if|else|for|while|do|switch|int|char|float|double|long|const|return|main {keyword++;fprintf(yyout, "%s", yytext);}
 "+"|"‐"|"*"|"/"|"%" {ariOp++;fprintf(yyout, "%s", yytext);}
 "<"|">"|"|"|"^"|"&"|"!" {logOp++;fprintf(yyout, "%s", yytext);}
+^[a - z A - Z _][a - z A - Z 0 - 9 _] * {identifier++;fprintf(yyout, "%s", yytext);};
 .|\n {fprintf(yyout, "%s", yytext);}
 %%
 
@@ -37,6 +38,7 @@ void main(int argc, char** argv){
     printf("No. of logical operators : %d\n" ,logOp);
     printf("No. of arithmetic operators : %d\n" ,ariOp);
     printf("No. of keywords : %d\n" ,keyword);
+    printf("No. of identifiers : %d\n" ,identifier);
 
     printf("\n----------------------------------------\n");
     printf("Below is the input file : \n");

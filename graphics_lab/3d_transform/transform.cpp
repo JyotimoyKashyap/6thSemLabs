@@ -16,7 +16,7 @@ static GLfloat input[8][3]=
 float output[8][3];
 float tx,ty,tz;
 float sx,sy,sz;
-float angle;
+// float angle;
 
 int choice,choiceRot;
 
@@ -126,7 +126,7 @@ void draw(float a[8][3])
     glColor3f(0.3,0.7,0.3);
     glVertex3fv(a[3]);
     glVertex3fv(a[7]);
-    
+
 glEnd();
 }
 
